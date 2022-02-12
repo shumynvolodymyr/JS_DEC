@@ -60,8 +60,8 @@
 // let str = "html javascript php";
 //
 // const lowToUp = (str) => {
-//     if (str.substring(0, 1) === str.substring(0, 1).toLowerCase()) {
-//         return str.substring(0, 1).toUpperCase() + str.slice(1);
+//     if (str.charAt(0) === str.charAt(0).toLowerCase()) {
+//         return str.charAt(0).toUpperCase() + str.slice(1);
 //     }
 //     return str;
 // }
@@ -73,7 +73,7 @@
 let str = "html javascript php";
 const capitalize = (str) => {
     let split = str.split(' ');
-    return split.map((value) => value.substring(0, 1).toUpperCase() + value.slice(1)).join(' ');
+    return split.map((value) => value.charAt(0).toUpperCase() + value.slice(1)).join(' ');
 }
 
 console.log(capitalize(str));
