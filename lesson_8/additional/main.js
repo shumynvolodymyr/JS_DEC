@@ -4,7 +4,7 @@ function scrapper(body) {
     let classNameArr = [];
     let children = body.children;
     for (const child of children) {
-        if (child.classList && child.classList.length > 0) {
+        if (child.classList) {
             child.classList.forEach(el => {
                 if (!classNameArr.includes(el)) {
                     classNameArr.push(el)
