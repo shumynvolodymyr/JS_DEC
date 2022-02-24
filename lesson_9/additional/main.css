@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user {
+    border: 1px solid skyblue;
+    padding: 10px;
+    margin: 10px;
+    width: 47%;
+}
