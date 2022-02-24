@@ -247,6 +247,7 @@ usersList.forEach(value => {
             mainDiv.innerText = `${element}: ${value[element]}`;
             div.append(mainDiv);
             if (typeof value[element] === "object") {
+                mainDiv.innerText = `${element}:`;
                 boxCreator(value[element], mainDiv)
             }
         }
