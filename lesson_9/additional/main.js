@@ -243,7 +243,7 @@ usersList.forEach(value => {
     function boxCreator(value, div) {
         for (const element in value) {
             const mainDiv = document.createElement('div');
-            mainDiv.classList.add(`${element}`);
+            mainDiv.classList = element;
             mainDiv.innerText = `${element}: ${value[element]}`;
             div.append(mainDiv);
             if (typeof value[element] === "object") {
