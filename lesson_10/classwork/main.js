@@ -51,7 +51,7 @@
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
 
-const badWords = ['putin', 'russia', 'soloveva'];
+const badWords = ['putin', 'russia', 'skabeeva'];
 
 const validator = (badWords) => {
     const wordsForm = document.forms.wordsValidator;
