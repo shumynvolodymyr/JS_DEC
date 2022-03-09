@@ -1,7 +1,7 @@
-const BackBtnDiv = document.createElement('div');
+const backBtnDiv = document.createElement('div');
 const backBtn = document.createElement('button');
 backBtn.innerText = 'BACK';
-BackBtnDiv.append(backBtn);
+backBtnDiv.append(backBtn);
 backBtn.onclick = () => history.back();
 
 const favoritesUsers = document.createElement('div');
@@ -23,10 +23,9 @@ for (const user of storage) {
 
     deleteButton.onclick = () => {
         const filter = storage.filter(u => u.id !== user.id);
-        console.log(filter);
         localStorage.setItem('users', JSON.stringify(filter));
         location.reload();
     };
 }
 
-document.body.append(BackBtnDiv, favoritesUsers);
+document.body.append(backBtnDiv, favoritesUsers);
