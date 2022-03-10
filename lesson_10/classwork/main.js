@@ -19,7 +19,7 @@
 // const tableCreator = document.forms.tableCreator;
 // const tableBox = document.createElement('table');
 //
-// tableCreator.submit.onclick = (e) => {
+// tableCreator.onsubmit = (e) => {
 //     e.preventDefault();
 //     for (let i = 0; i < tableCreator.tr.value; i++) {
 //         const trTag = document.createElement('tr');
@@ -33,7 +33,6 @@
 // }
 //
 // document.body.append(tableBox);
-
 
 // (Додатковачастина для завдання)
 //
@@ -52,13 +51,13 @@
 //     Перевірку робити при натисканні на кнопку
 
 const badWords = ['putin', 'russia', 'skabeeva'];
+const form = document.forms.wordsValidator;
 
 const validator = (badWords) => {
-    const wordsForm = document.forms.wordsValidator;
 
-    wordsForm.submit.onclick = (e) => {
+    form.onsubmit = (e) => {
         e.preventDefault();
-        const enteredWords = wordsForm.words.value.split(' ');
+        const enteredWords = form.words.value.split(' ');
         const forbiddenWords = [];
 
         for (const badWord of badWords) {
@@ -72,4 +71,3 @@ const validator = (badWords) => {
     }
 }
 validator(badWords);
-
