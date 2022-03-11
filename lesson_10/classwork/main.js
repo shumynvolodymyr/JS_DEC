@@ -2,16 +2,16 @@
 //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
 
-// const forms = document.forms;
-// const btn = document.getElementById('btn');
-//
-// btn.onclick = () => {
-//     for (const form of forms) {
-//         for (const element of form) {
-//             console.log(`${element.name}: ${element.value}`);
-//         }
-//     }
-// }
+const formOne = document.forms.formOne;
+const formTwo = document.forms.formTwo;
+const btn = document.getElementById('btn');
+
+btn.onclick = () => {
+            console.log(`Name: ${formOne.name.value}`);
+            console.log(`Email: ${formOne.email.value}`);
+            console.log(`Login: ${formTwo.login.value}`);
+            console.log(`Password: ${formTwo.password.value}`);
+}
 
 // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
@@ -50,24 +50,24 @@
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
 
-const badWords = ['putin', 'russia', 'skabeeva'];
-const form = document.forms.wordsValidator;
-
-const validator = (badWords) => {
-
-    form.onsubmit = (e) => {
-        e.preventDefault();
-        const enteredWords = form.words.value.split(' ');
-        const forbiddenWords = [];
-
-        for (const badWord of badWords) {
-            for (const word of enteredWords) {
-                if (badWord === word) {
-                    forbiddenWords.push(word);
-                }
-            }
-        }
-        forbiddenWords.length > 0 ? alert(`This word is forbidden: ${forbiddenWords}`) : console.log('OK');
-    }
-}
-validator(badWords);
+// const badWords = ['putin', 'russia', 'skabeeva'];
+// const form = document.forms.wordsValidator;
+//
+// const validator = (badWords) => {
+//
+//     form.onsubmit = (e) => {
+//         e.preventDefault();
+//         const enteredWords = form.words.value.split(' ');
+//         const forbiddenWords = [];
+//
+//         for (const badWord of badWords) {
+//             for (const word of enteredWords) {
+//                 if (badWord === word) {
+//                     forbiddenWords.push(word);
+//                 }
+//             }
+//         }
+//         forbiddenWords.length > 0 ? alert(`This word is forbidden: ${forbiddenWords}`) : console.log('OK');
+//     }
+// }
+// validator(badWords);
