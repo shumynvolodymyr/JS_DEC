@@ -64,29 +64,43 @@ let usersWithAddress = [
 
 const filterCreator = (users) => {
     const checkboxArr = ['statusFalse', 'yearsOld29', 'cityKyiv'];
+    const checkboxName = ['status: False', 'age >= 29', 'city: Kyiv'];
     const checkboxForm = document.createElement('form');
+
     checkboxForm.setAttribute('name', 'checkboxForm');
 
     for (let i = 0; i < checkboxArr.length; i++) {
         const checkboxLabel = document.createElement('label');
         const input = document.createElement('input');
+
         input.setAttribute('type', 'checkbox');
         input.setAttribute('id', `${checkboxArr[i]}`);
         input.setAttribute('name', `${checkboxArr[i]}`);
-        checkboxLabel.innerText = `${checkboxArr[i]}`;
+        input.style.width = '30px';
+        input.style.height = '30px';
+        checkboxForm.style.display = 'flex';
+        checkboxLabel.style.display = 'flex';
+        checkboxLabel.style.alignItems = 'center';
+        input.style.marginLeft = '20px';
+        checkboxForm.style.justifyContent = 'space-evenly';
+        checkboxLabel.innerHTML = `<h2>${checkboxName[i]}</h2>`;
         checkboxLabel.append(input)
         checkboxForm.append(checkboxLabel);
     }
-
     document.body.append(checkboxForm);
 
+    const usersDiv = document.createElement('div');
+    usersDiv.classList.add('users-box');
+
     const boxCreator = (users) => {
+        usersDiv.innerHTML = '';
+
         users.forEach(user => {
-            const mainDiv = document.createElement('div');
-            mainDiv.style.border = '1px solid black';
-            mainDiv.style.margin = '10px';
-            mainDiv.style.padding = '10px';
-            mainDiv.style.boxShadow = '10px 5px 5px silver';
+            const userDiv = document.createElement('div');
+            userDiv.style.border = '1px solid black';
+            userDiv.style.margin = '10px';
+            userDiv.style.padding = '10px';
+            userDiv.style.boxShadow = '10px 5px 5px silver';
 
             const recursiveCreator = (data, div) => {
                 for (const value in data) {
@@ -100,22 +114,40 @@ const filterCreator = (users) => {
                     }
                 }
             }
-            recursiveCreator(user, mainDiv);
+            recursiveCreator(user, userDiv);
 
-            document.body.append(mainDiv);
+            usersDiv.append(userDiv);
+            document.body.append(usersDiv);
         });
     }
 
     const form = document.forms[0];
-    form.addEventListener('change', e => {
 
-        if (form.statusFalse.checked) {
+    form.addEventListener('change', () => {
+        const status = form.statusFalse.checked;
+        const age = form.yearsOld29.checked;
+        const city = form.cityKyiv.checked;
+
+        if (status && age && city) {
+            let filter = users.filter(user => user.status === false && user.age >= 29 && user.address.city === 'Kyiv');
+            boxCreator(filter);
+        } else if (status && age) {
+            console.log(users.filter(user => user.status === false && user.age >= 29))
+            let filter = users.filter(user => user.status === false && user.age >= 29);
+            boxCreator(filter);
+        } else if (status && city) {
+            let filter = users.filter(user => user.status === false && user.address.city === 'Kyiv');
+            boxCreator(filter);
+        } else if (age && city) {
+            let filter = users.filter(user => user.age >= 29 && user.address.city === 'Kyiv');
+            boxCreator(filter);
+        } else if (status) {
             let filter = users.filter(user => user.status === false);
             boxCreator(filter);
-        } else if (form.yearsOld29.checked) {
+        } else if (age) {
             let filter = users.filter(user => user.age >= 29);
             boxCreator(filter);
-        } else if (form.cityKyiv.checked) {
+        } else if (city) {
             let filter = users.filter(user => user.address.city === 'Kyiv');
             boxCreator(filter);
         }
