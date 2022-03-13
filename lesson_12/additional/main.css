@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.users-box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px
+}
+.user-box{
+    box-sizing: border-box;
+    width: 32%;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.user-box h1{
+    width: 100%;
+}
+.user-box h3{
+    width: 100%;
+}
+
+button{
+   width: 96%;
+    height: 30px;
+    margin: 10px;
+    background: linear-gradient(gold, orangered);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+}
+
+.posts-box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post-box{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #000000;
+}
