@@ -1,0 +1,47 @@
+body {
+    background: linear-gradient(lightskyblue, yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.user-box {
+    box-sizing: border-box;
+    width: 49%;
+    border: 1px solid silver;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 16px 17px 36px 0 rgba(0, 0, 0, 0.65);
+}
+
+.user-details-btn {
+    border-radius: 10px;
+    background: none;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+}
+
+.user-box:hover {
+    background: linear-gradient(orange, orangered);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-details-btn:hover {
+    background: lightskyblue;
+}

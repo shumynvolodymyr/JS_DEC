@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(lightskyblue, yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-box {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: 16px 17px 36px 0 rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p {
+    width: 100%;
+    text-align: center;
+}
+
+.posts-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+
+.postBtn {
+    border-radius: 10px;
+    background: none;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 90px;
+
+}
+
+.postBtn:hover {
+    background: linear-gradient(orange, orangered);
+}
+
+.post-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 19%;
+    box-sizing: border-box;
+    border: 1px solid silver;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 16px 17px 36px 0 rgba(0, 0, 0, 0.65);
+}
+
+.post-box button {
+    width: 80%;
+    margin: 10px;
+    border-radius: 10px;
+    background: none;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+}
+
+.post-box button:hover {
+    background: linear-gradient(orange, orangered);
+}

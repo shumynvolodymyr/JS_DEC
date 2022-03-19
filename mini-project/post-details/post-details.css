@@ -1,0 +1,54 @@
+body {
+    background: linear-gradient(lightskyblue, yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-box {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: 16px 17px 36px 0 rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.post-box p {
+    width: 100%;
+    text-align: center;
+}
+
+.comments-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.comments-box > p {
+    width: 24.5%;
+    box-sizing: border-box;
+    border: 1px solid silver;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 16px 17px 36px 0 rgba(0, 0, 0, 0.65);
+}
+
+.post-box button {
+    width: 60%;
+    border-radius: 10px;
+    background: none;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+}
+
+.post-box button:hover {
+    background: linear-gradient(orange, orangered)
+}
